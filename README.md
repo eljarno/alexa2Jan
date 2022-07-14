@@ -439,8 +439,7 @@ But be aware: The Cookie will time out after several time and then the adapter w
 
 
 ## Changelog
-
-### __WORK IN PROGRESS__
+### 3.17.5 (2022-07-14)
 * (Apollon77) Minimum smart home device query interval is now 5 minutes and not 1 minute anymore to remove some requests for now
 
 ### 3.17.4 (2022-07-13)
