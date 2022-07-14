@@ -910,7 +910,8 @@ function queryAllSmartHomeDevices(initial, cloudOnly, callback) {
                 updateSmartHomeDevicesTimer = null;
                 if (stopped) return;
 
-                alexa.getSmarthomeDevices((err, res) => {
+                queryAllSmartHomeDevices(true, true);
+                /*alexa.getSmarthomeDevices((err, res) => {
                     let all = {};
                     if (
                         res &&
@@ -932,7 +933,7 @@ function queryAllSmartHomeDevices(initial, cloudOnly, callback) {
                         }
                     }
                     queryAllSmartHomeDevices(true, true);
-                });
+                });*/
             }, adapter.config.updateSmartHomeDevicesInterval * 1000);
         }
         callback && callback();
@@ -3929,7 +3930,7 @@ function main() {
         adapter.config.updateStateInterval += Math.floor(Math.random() * 10);
     }
     adapter.config.updateSmartHomeDevicesInterval = parseInt(adapter.config.updateSmartHomeDevicesInterval, 10);
-    if ((adapter.config.updateSmartHomeDevicesInterval !== 0 || isNaN(adapter.config.updateSmartHomeDevicesInterval)) && adapter.config.updateSmartHomeDevicesInterval < 60) {
+    if ((adapter.config.updateSmartHomeDevicesInterval !== 0 || isNaN(adapter.config.updateSmartHomeDevicesInterval)) && adapter.config.updateSmartHomeDevicesInterval < 300) {
         adapter.config.updateSmartHomeDevicesInterval = 300 + Math.floor(Math.random() * 60);
         adapter.log.info(`Update SmartHome Devices Interval is too low, set to ${adapter.config.updateHistoryInterval}s`);
     } else if (adapter.config.updateSmartHomeDevicesInterval !== 0) {
