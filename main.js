@@ -40,6 +40,7 @@ const listObjects = {
     'originalAudioId': { type: 'string', role: 'text' },
     'type': { type: 'string', role: 'text' },
     'updatedDate': { type: 'number', role: 'date' },
+    'queryUpdate': { type: 'boolean', role: 'indicator' },
     'version': { type: 'number', role: 'value' }
 };
 
